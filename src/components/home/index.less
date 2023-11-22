@@ -1,0 +1,127 @@
+.home-web-wrapper {
+    padding: 0 calc((100% - 928px)/2);
+
+    .nav-bar {
+        height: 112px;
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+
+        .nav-control-logo {
+
+            height: 60px;
+
+            img {
+                height: 100%;
+                max-width: 100%;
+            }
+        }
+
+        .nav-control-wrapper {
+            display: grid;
+            grid-template-columns: 0.5fr 0.5fr 2fr;
+            align-items: center;
+
+            .el-input {
+                width: 400px;
+                height: 44px;
+            }
+
+        }
+
+    }
+
+    .home-blurb-content-wrapper {
+        display: grid;
+        grid-template-columns: auto 300px;
+        min-height: 250px;
+
+        .blurb-desc {
+            font-size: var(--font-md);
+
+            .text {
+                padding-right: var(--s-8);
+            }
+        }
+
+        .blurb-img {
+            padding: var(--br-xxl);
+
+            img {
+
+                border-radius: var(--br-md);
+                height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .home-labels-content-wrapper {
+        height: var(--br-xxxl);
+        display: flex;
+        justify-content: flex-start;
+        margin-top: var(--br-xxl);
+
+        .el-tag {
+            width: calc(var(--br-xxxl)*2);
+            height: 100%;
+            font-size: var(--font-md);
+            margin-right: var(--br-xxl);
+            color: @primary-font-color;
+            background: @primary-bg-under;
+            border-color: @primary-bg-under;
+            cursor: pointer;
+
+            &:hover {
+                background: @button-light-color;
+            }
+        }
+
+    }
+
+    .home-cards-content-wrapper {
+        margin-top: calc(var(--br-xxl)*2);
+
+
+        .card-item {
+            background: @primary-bg-under;
+            margin-bottom: var(--br-xxl);
+            border-radius: var(--br-lg);
+            padding: var(--br-xl);
+            display: grid;
+            grid-template-columns: 300px auto;
+            grid-column-gap: var(--br-xxl);
+
+            &:hover {
+                background: @card-light-color;
+            }
+
+            img {
+                height: 100%;
+                border-radius: var(--br-md);
+                max-width: 100%;
+            }
+
+            .card-item__right {
+                display: flex;
+                flex-direction: column;
+
+                .desc {
+                    opacity: 0.8;
+                }
+
+                .bottom {
+                    opacity: 0.5;
+                    font-size: var(--font-sm);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        padding: 0 calc((100% - 928px)/2);
+    }
+}
