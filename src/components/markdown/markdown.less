@@ -1,0 +1,65 @@
+.qhl-markdown {
+    --markdown-bg: #fff;
+    --markdown-border-color: #fef0f05e;
+    --markdown-font-color: #000;
+    --markdown-m-font-color: #000000b8;
+    --markdown-code-bg: #222222;
+    --markdown-code-font-code: #1ebfed;
+
+    padding: var(--s-6) calc((100% - 928px)/2);
+    height: 100%;
+    min-height: 100vh;
+    color: var(--markdown-font-color);
+    display: flex;
+    background: url(../../assets/images/other/brown-papersq.png);
+
+    .qhl-markdown-content {
+        flex: 1;
+        backdrop-filter: blur(10px);
+        border-radius: var(--s-5);
+        padding: var(--br-xxxl);
+        // background: rgba(0, 0, 0, 0.3);
+        background-color: transparent;
+        color: var(--markdown-font-color);
+        box-shadow: 0 0 30px 10px var(--markdown-border-color);
+        filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+
+        >header {
+            color: var(--markdown-m-font-color);
+        }
+
+        // 插槽统一样式
+
+        .markdown-content-slot {
+            .section-item {
+                a {
+                    color: #000;
+
+                    &:hover {
+                        color: #409eff;
+
+                    }
+                }
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                }
+
+                h3 {
+                    padding-bottom: var(--br-md);
+                    border-bottom: 1px solid var(--markdown-border-color);
+
+                }
+
+                .section-item-code {
+                    border-radius: var(--s-1);
+                    font-size: var(--font-sm);
+                    color: var(--markdown-code-font-code);
+                }
+            }
+        }
+
+
+    }
+}

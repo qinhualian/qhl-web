@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    // 指定ECMAScript目标版本
+    "target": "esnext",
     // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。
     "allowSyntheticDefaultImports": true,
     // 解析非相对模块名的基准目录
@@ -9,22 +11,32 @@
     // 从 tslib 导入辅助工具函数（比如 __extends， __rest等）
     "importHelpers": true,
     // 指定生成哪个模块系统代码
-    "module": "esnext",
+    "module": "commonjs",
     // 决定如何处理模块。
     "moduleResolution": "node",
     // 启用所有严格类型检查选项。
     // 启用 --strict相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict，
     // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
     "strict": true,
-    "noImplicitAny": false, //关闭implicitly has an 'any' type
+    "alwaysStrict": true, //  检查编译后的文件是否使用严格模式，默认为false
+    "strictNullChecks": true, // 不允许把null、undefined赋值给其他类型的变量
+    "strictFunctionTypes": true, /* 启用函数类型的严格检查。 */
+    "strictPropertyInitialization": true, /* 启用对类中属性初始化的严格检查。 */
+    "noImplicitThis": true, /* 使用隐含的“any”类型在“this”表达式上引发错误。 */
+    "noImplicitAny": true, //不允许隐式的any类型
+    "allowJS": true, // 允许编译器编译JS，JSX文件
+    "checkJs": true, // 允许在JS文件中报错，通常与allowJS一起使用
+    /* 额外检查 */
+    "noUnusedLocals": true, // 检查只声明、未使用的局部变量(只提示不报错)
+    "noUnusedParameters": true, /* 报告未使用参数的错误。 */
+    "noImplicitReturns": true, /* 不是函数中的所有代码路径都返回值时报告错误。 */
+    "noFallthroughCasesInSwitch": true, /* 在 switch 语句中报告失败情况的错误。 */
     // 支持jsx语法
     "jsx": "preserve",
     // 生成相应的 .map文件。
     "sourceMap": true,
     // 忽略所有的声明文件（ *.d.ts）的类型检查。
     "skipLibCheck": true,
-    // 指定ECMAScript目标版本
-    "target": "esnext",
     // 要包含的类型声明文件名列表
     "types": [
       "node",

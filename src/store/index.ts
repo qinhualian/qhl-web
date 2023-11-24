@@ -1,43 +1,11 @@
 // src/store/index.ts
-import { defineStore } from 'pinia';
-import { createPinia } from 'pinia';
-import piniaPersist from 'pinia-plugin-persist';
+// import { defineStore } from 'pinia';
+// import { createPinia } from 'pinia';
+// import piniaPersist from 'pinia-plugin-persist';
+import { defineStore } from 'pinia'
 
-interface GlobalState {
-    token: string,
-    userInfo: any
-}
-// defineStore 调用后返回一个函数，调用该函数获得 Store 实体
-export const GlobalStore = defineStore({
-    id: 'GlobalState', // id: 必须的，在所有 Store 中唯一
-    // state: 返回对象的函数
-    state: (): GlobalState => ({
-        token: '22',
-        userInfo: {}
-    }),
-    getters: {},
-    actions: {
-        // 不使用箭头函数
-        setToken(token: string) {
-            this.token = token;
-        },
-        setUserIngo(userInfo: any) {
-            this.userInfo = userInfo;
-        }
-    },
-    // 持久化
-    persist: {
-        enabled: true,
-        strategies: [
-            {
-                key: 'GlobalState',
-                storage: localStorage,
-                // storage: sessionStorage,
-            }
-        ]
-    }
-});
-const pinia = createPinia();
-pinia.use(piniaPersist);
-
-export default pinia;
+// useStore 可以是 useUser、useCart 之类的任何东西
+// 第一个参数是应用程序中 store 的唯一 id
+export const useWebRouter = defineStore('web-router', {
+    // other options...
+})

@@ -1,7 +1,9 @@
 // 1. 导入
 import { createRouter, createWebHashHistory } from 'vue-router';
-const HelloWorld = () => import("@/components/HelloWorld.vue");
-const Home = () => import("@/components/home/index.vue");
+const HelloWorld = () => import("@/views/HelloWorld.vue");
+const Home = () => import("@/views/home/index.vue");
+const OtherGit = () => import("@/views/home/components/other/git/git.vue")
+const OtherWebsite = () => import("@/views/home/components/other/website.vue")
 // 2. 创建路由对象
 const routes = createRouter({
     history: createWebHashHistory(),
@@ -9,10 +11,27 @@ const routes = createRouter({
         {
             path: "/",
             name: "index",
-            meta: {
-                title: "首页",
-            },
             component: Home,
+            meta: {
+                showFooter: true
+            },
+            children: [
+                {
+                    name: 'git',
+                    path: '/other/git',
+                    component: OtherGit,
+                    meta: {
+                        showFooter: false
+                    },
+                }, {
+                    name: 'website',
+                    path: '/other/website',
+                    component: OtherWebsite,
+                    meta: {
+                        showFooter: false
+                    },
+                }
+            ]
         },
         {
             path: "/helloworld",

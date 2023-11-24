@@ -59,6 +59,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
     box-sizing: content-box;
+
+    &::-webkit-scrollbar {
+        background: transparent;
+        width: 0;
+    }
+
 }
 
 a {
@@ -86,4 +92,9 @@ a {
     --el-input-clear-hover-color: @primary-border-color;
     --el-input-focus-border-color: @primary-border-color;
     --el-input-width: 100%;
+}
+
+.el-image__preview {
+    cursor: zoom-in !important;
+    object-position: left;
 }

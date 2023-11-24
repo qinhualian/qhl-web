@@ -1,5 +1,6 @@
 .home-web-wrapper {
     padding: 0 calc((100% - 928px)/2);
+    min-height: 100vh;
 
     .nav-bar {
         height: 112px;
@@ -94,6 +95,22 @@
             display: grid;
             grid-template-columns: 300px auto;
             grid-column-gap: var(--br-xxl);
+            height: 240px;
+
+            .el-image {
+                img {
+                    object-position: left;
+                }
+
+            }
+
+            h2 {
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
 
             &:hover {
                 background: @card-light-color;
@@ -103,11 +120,13 @@
                 height: 100%;
                 border-radius: var(--br-md);
                 max-width: 100%;
+
             }
 
             .card-item__right {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
 
                 .desc {
                     opacity: 0.8;
