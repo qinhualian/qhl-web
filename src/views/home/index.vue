@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { Ref, onMounted, onBeforeUnmount, reactive, ref, watch, nextTick, computed } from 'vue';
-import { CardsType, HomeCardData, TagsType } from '@/datas/home-data';
+import { CardsType, HomeCardData, concatPath } from '@/datas/home-data';
 import router from '@/router';
 // import { useWebRouter } from '@/store';
 import * as THREE from 'three'
@@ -19,13 +19,6 @@ let vantaEffect: any = null;
 
 // 计算属性
 const showCardList = computed(() => {
-  // let list: CardsType[] = []
-  // curTag.forEach((tag) => {
-  //   const item = cardList.data.find((item) => { return item.tags.includes(tag) })
-  //   if (item) {
-  //     list.push(item)
-  //   }
-  // })
   return curTag.value === 'all' ? cardList.data : cardList.data.filter((item) => { return item.tags.includes(curTag.value) })
 })
 
@@ -34,7 +27,7 @@ onMounted(() => {
   cardList.data = HomeCardData.map((item, index) => {
     return {
       ...item,
-      index
+      index,
     }
   })
 
@@ -53,9 +46,10 @@ onBeforeUnmount(() => {
  * @param  item:CardsType 卡片信息
  */
 const handleViewDetails = (item: CardsType) => {
-  if (item.path) {
+  if (item.routerName) {
     router.push({
-      path: item.path,
+      name: item.routerName,
+      query: { title: item.title }
     })
   }
 }
@@ -127,12 +121,13 @@ watch(() => router.currentRoute.value.name, (toName: any) => {
       </div>
     </div>
     <div class="home-labels-content-wrapper">
-      <el-tag v-for="item in tagList" :key="item" @click="handleFilterByTag(item)">{{ item }}</el-tag>
+      <el-tag v-for="item in tagList" :key="item" @click="handleFilterByTag(item)"
+        :class='{ "active-tag": curTag === item }'>{{ item }}</el-tag>
     </div>
     <div class="home-cards-content-wrapper">
-      <div class="card-item" v-for="item in showCardList" :key="item.title">
-        <el-image class="adczx" title="查看大图" :src="item.icon" :preview-src-list="[item.icon]" fit="cover" :max-scale="7"
-          :min-scale="0.2"></el-image>
+      <div class="card-item animate__animated animate__bounceInLeft" v-for="item in showCardList" :key="item.title">
+        <el-image title="查看大图" :src="item?.icon || concatPath('默认')" :preview-src-list="[item?.icon || concatPath('默认')]"
+          fit="cover" :max-scale="7" :min-scale="0.2"></el-image>
         <div class="card-item__right">
           <h2 @click="handleViewDetails(item)">{{ item.title }}</h2>
           <p class="desc">{{ item.desc }}</p>

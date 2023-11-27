@@ -2,7 +2,7 @@
     --markdown-bg: #fff;
     --markdown-border-color: #fef0f05e;
     --markdown-font-color: #000;
-    --markdown-m-font-color: #000000b8;
+    --markdown-h4-font-color: #000000b8;
     --markdown-code-bg: #222222;
     --markdown-code-font-code: #1ebfed;
 
@@ -25,7 +25,7 @@
         filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
 
         >header {
-            color: var(--markdown-m-font-color);
+            color: var(--markdown-h4-font-color);
         }
 
         // 插槽统一样式
@@ -36,7 +36,7 @@
                     color: #000;
 
                     &:hover {
-                        color: #409eff;
+                        color: @link-hover-color;
 
                     }
                 }
@@ -49,7 +49,7 @@
                 h3 {
                     padding-bottom: var(--br-md);
                     border-bottom: 1px solid var(--markdown-border-color);
-
+                    color: var(--markdown-font-color);
                 }
 
                 .section-item-code {
@@ -57,6 +57,11 @@
                     font-size: var(--font-sm);
                     color: var(--markdown-code-font-code);
                 }
+
+                h4 {
+                    color: var(--markdown-font-color);
+                }
+
             }
         }
 

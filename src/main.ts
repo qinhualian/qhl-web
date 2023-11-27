@@ -12,6 +12,7 @@ import 'highlight.js/styles/atom-one-dark.css'
 import 'highlight.js/lib/common'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 import './assets/style/global.less'
+import 'animate.css';
 
 
 

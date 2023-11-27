@@ -15,6 +15,7 @@ declare module 'vue' {
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Home: typeof import('./src/components/home/index.vue')['default']
     IEpCalendar: typeof import('~icons/ep/calendar')['default']
+    IEpLink: typeof import('~icons/ep/link')['default']
     IEpSearch: typeof import('~icons/ep/search')['default']
     Markdown: typeof import('./src/components/markdown/markdown.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

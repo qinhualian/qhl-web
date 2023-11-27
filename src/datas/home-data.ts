@@ -1,18 +1,22 @@
 
 
 // export type TagsType = 'all' | 'js' | 'html' | 'css' | 'ts' | 'vue' | 'other'
-export interface CardsType {
+export type CardsType = {
     title: string,
     desc: string,
     tags: string[],
     time: string,
-    icon: string,
-    path?: string
+    icon?: string,
+    routerName?: string
 }
 
 export function concatPath(name: string) {
     return "/src/assets/images/home/cards/" + name + ".png"
 }
+export function randomID() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
 
 
 export const HomeCardData: CardsType[] = [{
@@ -26,19 +30,24 @@ export const HomeCardData: CardsType[] = [{
     desc: 'src被当做静态资源处理了，并没有进行编译。require是在运行时加载，import是编译时加载，如果需要使用import就提前导入图片',
     tags: ['vue', 'html'],
     time: '2022-01-01',
+
     icon: concatPath('vue3-2')
 }, {
     title: 'git命令操作',
     desc: 'git的相关操作，例如初始化项目，分支之间的推送等',
     tags: ['other'],
     time: '2022-01-01',
-    icon: concatPath('默认'),
-    path: '/other/git'
+    routerName: 'git'
 }, {
     title: '前端实用网站收集',
     desc: '学习网站、配色、UI灵感、vue插件、css效果等',
     tags: ['other'],
     time: '2022-01-01',
-    icon: concatPath('默认'),
-    path: '/other/website'
+    routerName: 'website'
+}, {
+    title: 'js中遍历数组和对象的方法',
+    desc: 'forEach()、some()、every()',
+    tags: ['js'],
+    time: '2022-01-01',
+    routerName: 'circulate',
 }]
