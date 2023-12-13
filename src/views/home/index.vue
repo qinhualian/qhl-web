@@ -126,8 +126,8 @@ watch(() => router.currentRoute.value.name, (toName: any) => {
     </div>
     <div class="home-cards-content-wrapper">
       <div class="card-item animate__animated animate__bounceInLeft" v-for="item in showCardList" :key="item.title">
-        <el-image title="查看大图" :src="item?.icon || concatPath('默认')" :preview-src-list="[item?.icon || concatPath('默认')]"
-          fit="cover" :max-scale="7" :min-scale="0.2"></el-image>
+        <el-image title="查看大图" :src="item?.icon || concatPath('默认.png')"
+          :preview-src-list="[item?.icon || concatPath('默认.png')]" fit="cover" :max-scale="7" :min-scale="0.2"></el-image>
         <div class="card-item__right">
           <h2 @click="handleViewDetails(item)">{{ item.title }}</h2>
           <p class="desc">{{ item.desc }}</p>
