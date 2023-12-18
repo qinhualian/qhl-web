@@ -14,6 +14,8 @@ declare module 'vue' {
     Git: typeof import('./src/components/home/components/other/git/git.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Home: typeof import('./src/components/home/index.vue')['default']
+    IEpArrowDownBold: typeof import('~icons/ep/arrow-down-bold')['default']
+    IEpArrowUpBold: typeof import('~icons/ep/arrow-up-bold')['default']
     IEpCalendar: typeof import('~icons/ep/calendar')['default']
     IEpLink: typeof import('~icons/ep/link')['default']
     IEpSearch: typeof import('~icons/ep/search')['default']

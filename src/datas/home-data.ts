@@ -28,6 +28,16 @@ export const HomeCardData: CardsType[] = [{
     icon: concatPath('书本翻页.gif')
 
 }, {
+    title: 'CSS效果---滚筒式轮播',
+    desc: '特别注意rotateX和translateZ顺序不一样效果就会不一样（因为坐标轴会变化）。其次图片外的盒子也需要同时translateZ。translateZ的距离为圆形的半径，可适当增加间距。',
+    tags: ['css'],
+    time: '2022-01-01',
+    routerName: 'rollerFlipping',
+    icon: concatPath('滚动翻页.gif')
+
+},
+
+{
     title: 'Vue3中reactive定义的数组赋空值不会触发视图更新',
     desc: '可以改变原数组的方法有:push,pop,shift,unshift,splice,sort,reverse',
     tags: ['vue'],

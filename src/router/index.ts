@@ -1,5 +1,6 @@
 // 1. 导入
 import BookFlipping from '@/views/home/components/css/bookFlipping.vue';
+import RollerFlipping from '@/views/home/components/css/rollerFlipping.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 const HelloWorld = () => import("@/views/HelloWorld.vue");
 const Home = () => import("@/views/home/index.vue");
@@ -43,6 +44,13 @@ const routes = createRouter({
                     name: 'bookFlipping',
                     path: '/css/bookFlipping',
                     component: BookFlipping,
+                    meta: {
+                        showFooter: false
+                    },
+                }, {
+                    name: 'rollerFlipping',
+                    path: '/css/rollerFlipping',
+                    component: RollerFlipping,
                     meta: {
                         showFooter: false
                     },

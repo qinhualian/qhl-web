@@ -1,6 +1,6 @@
 .qhl-markdown {
     --markdown-bg: #fff;
-    --markdown-border-color: #fef0f05e;
+    --markdown-border-color: #452e2e5e;
     --markdown-font-color: #000;
     --markdown-h4-font-color: #000000b8;
     --markdown-code-bg: #222222;
@@ -12,18 +12,21 @@
     color: var(--markdown-font-color);
     display: flex;
     background: url(../../assets/images/other/brown-papersq.png);
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    background: linear-gradient(to right top, #65dfc9 0%, #6cdbed 100%);
+
+
 
     .qhl-markdown-content {
         flex: 1;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(30px);
         border-radius: var(--s-5);
         padding: var(--br-xxxl);
-        // background: rgba(0, 0, 0, 0.3);
-        background-color: transparent;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.3));
+        // background-color: rgba(255, 255, 255, 0.3);
         color: var(--markdown-font-color);
-        box-shadow: 0 0 30px 10px var(--markdown-border-color);
-        filter: drop-shadow(0px 20px 10px rgba(0, 0, 0, 0.3));
+        box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+
+
 
         >header {
             color: var(--markdown-h4-font-color);
