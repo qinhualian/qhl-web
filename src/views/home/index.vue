@@ -101,7 +101,8 @@ watch(() => router.currentRoute.value.name, (toName: any) => {
       </div>
       <div class="nav-control-wrapper">
         <a href="">首页</a>
-        <a href="">其他</a>
+        <!-- <a href="">其他</a> -->
+        <router-link to="/screen">其他</router-link>
         <el-input v-model="searchValue" placeholder="Search">
           <template #prefix>
             <el-icon :size="20"><i-ep-Search /></el-icon>

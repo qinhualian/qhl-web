@@ -2,8 +2,9 @@
 import BookFlipping from '@/views/home/components/css/bookFlipping.vue';
 import RollerFlipping from '@/views/home/components/css/rollerFlipping.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
-const HelloWorld = () => import("@/views/HelloWorld.vue");
 const Home = () => import("@/views/home/index.vue");
+const EconomyScreen = () => import("@/views/screen/economy/index.vue");
+const Screen = () => import("@/views/screen/index.vue");
 const OtherGit = () => import("@/views/home/components/other/git/git.vue")
 const OtherWebsite = () => import("@/views/home/components/other/website.vue")
 const JsCirculate = () => import("@/views/home/components/js/circulate.vue")
@@ -19,6 +20,7 @@ const routes = createRouter({
                 showFooter: true
             },
             children: [
+
                 {
                     name: 'git',
                     path: '/other/git',
@@ -58,12 +60,22 @@ const routes = createRouter({
             ]
         },
         {
-            path: "/helloworld",
-            name: "helloworld",
+            path: "/screen",
+            name: "screen",
+            component: Screen,
             meta: {
-                title: "helloworld",
+                showFooter: true
             },
-            component: HelloWorld,
+            children: [
+                {
+                    name: 'economy',
+                    path: '/economy',
+                    component: EconomyScreen,
+                    meta: {
+                        showFooter: false
+                    },
+                }
+            ]
         }
     ]
 });
